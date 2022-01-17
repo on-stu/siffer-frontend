@@ -1,4 +1,11 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Noto Sans KR";
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+  font-family: "Noto Sans KR", sans-serif;
 }
