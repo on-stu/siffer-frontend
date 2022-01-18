@@ -76,7 +76,7 @@ const Container = styled.div`
   }
 `;
 
-const LandingPage = () => {
+const AboutPage = () => {
   return (
     <Container>
       <div className="banner">
@@ -192,4 +192,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default AboutPage;

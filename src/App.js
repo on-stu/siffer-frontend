@@ -1,9 +1,11 @@
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SizeSearchPage from "./pages/SizeSearchPage";
-import LandingPage from "./pages/LandingPage";
+import AboutPage from "./pages/AboutPage";
 import { useEffect, useState } from "react";
 import SideBar from "./components/SideBar";
+import MySizeIndex from "./pages/MySizePage/MySizeIndex";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -27,6 +29,7 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Header
           background={headerBackground}
           sideBar={sideBar}
@@ -34,8 +37,9 @@ function App() {
         />
         <SideBar visible={sideBar} setVisible={setSideBar} />
         <Routes>
-          <Route path="/" element={<SizeSearchPage />} />
-          <Route path="landing" element={<LandingPage />} />
+          <Route path="/" element={<AboutPage />} />
+          <Route path="/sizesearch" element={<SizeSearchPage />} />
+          <Route path="/mysize" element={<MySizeIndex />} />
         </Routes>
       </Router>
     </>
