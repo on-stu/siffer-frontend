@@ -11,7 +11,7 @@ const Container = styled.div`
   .banner {
     width: 100%;
     height: 100vh;
-    background-image: url("images/MeasureService/5.png");
+    background-image: url("images/MeasureService/6.png");
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -66,11 +66,11 @@ const Container = styled.div`
     padding-right: 20px;
     row-gap: 10px;
     margin-top: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 160px;
   }
 `;
 
-const MeasureService = () => {
+const SelfRegistration = () => {
   return (
     <Container>
       <div className="banner">
@@ -89,16 +89,16 @@ const MeasureService = () => {
               marginBottom: "24px",
             }}
           >
-            Measurement service
+            Self registeration
           </span>
           <span style={{ fontWeight: "300", fontSize: "20px" }}>
-            원하시는 장소로 달려갑니다.
+            줄이고 또 줄였습니다.
           </span>
           <span style={{ fontWeight: "300", fontSize: "20px" }}>
-            단 한번의 측정으로 사이즈 고민없는
+            진짜 필요한 항목들로만.
           </span>
           <span style={{ fontWeight: "300", fontSize: "20px" }}>
-            온라인 쇼핑을 시작하세요.
+            5분 투자의 신세계를 경험하세요.
           </span>
         </div>
         <div
@@ -111,7 +111,7 @@ const MeasureService = () => {
           }}
         >
           <CircularButton width={320} white={true}>
-            지금 바로 예약
+            지금 바로 입력
           </CircularButton>
         </div>
       </div>
@@ -119,45 +119,27 @@ const MeasureService = () => {
         <span className="title">이런 분께 추천해요.</span>
         <div className="cards">
           <HorizantalCard
-            title="신체부위에 고민있는 분"
-            tags="# 하체통통 # 복부비만"
-            imageUrl="images/MeasureService/2.png"
+            title="지금 당장 쇼핑이 급한 분"
+            tags="# 긴급쇼핑"
+            imageUrl="images/MeasureService/7.png"
           />
           <HorizantalCard
-            title="셀프측정이 귀찮은 분"
-            tags="# 귀차니즘"
-            imageUrl="images/MeasureService/3.png"
+            title="비대면 서비스를 선호하시는 분"
+            tags="# 언택트"
+            imageUrl="images/MeasureService/8.png"
           />
         </div>
         <span className="title">서비스 이용방법</span>
-        <span className="subTitle">해당 서비스는 무료입니다.</span>
-        <p>
-          ※ 예약 당일 무단불참 예방을 위해 보증금 만 원을 선입금하셔야 하며,
-          현재 부산지역만 지원됩니다.
-        </p>
         <div className="banners">
-          <SmallBanner icon="finger" title="하단의 '예약' 버튼 클릭 !" />
-          <SmallBanner
-            icon="congratulate"
-            title="예약 후 24시간 내 예약확정 알림 받기"
-          />
-
-          <SmallBanner icon="gift" title="원하는 장소에서 신체치수 측정 받기" />
-
+          <SmallBanner icon="finger" title="하단의 '입력' 버튼 클릭 !" />
           <SmallBanner
             icon="ruler"
-            title="서비스 이용 후 씨퍼 굿즈 선물 받기"
+            title="가이드를 따라 치수 측정 후 입력하기"
           />
-        </div>
-        <span className="title">씨퍼 랜덤 굿즈 기프트</span>
-        <span className="subTitle">해당 서비스 이용 고객님께 씨퍼만의</span>
-        <span className="subTitle">유니크한 굿즈를 선물해 드립니다.</span>
-        <div className="imgBox">
-          <img src="images/MeasureService/4.png" />
         </div>
       </div>
     </Container>
   );
 };
 
-export default MeasureService;
+export default SelfRegistration;

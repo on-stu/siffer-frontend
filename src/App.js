@@ -7,6 +7,7 @@ import SideBar from "./components/SideBar";
 import MySizeIndex from "./pages/MySizePage/MySizeIndex";
 import ScrollToTop from "./components/ScrollToTop";
 import MeasureService from "./pages/MySizePage/MeasureService";
+import SelfRegistration from "./pages/MySizePage/SelfRegistration";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -42,6 +43,7 @@ function App() {
           <Route path="/sizesearch" element={<SizeSearchPage />} />
           <Route path="/mysize" element={<MySizeIndex />} />
           <Route path="/measure" element={<MeasureService />} />
+          <Route path="/selfregistration" element={<SelfRegistration />} />
         </Routes>
       </Router>
     </>

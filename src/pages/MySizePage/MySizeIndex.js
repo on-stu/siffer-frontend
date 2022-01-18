@@ -24,7 +24,6 @@ const Container = styled.div`
     width: 150px;
     height: 150px;
     border: 2px solid black;
-
     border-radius: 18px;
     font-size: 20px;
     display: flex;
@@ -106,7 +105,9 @@ const MySizeIndex = () => {
         </span>
         <CircularButton
           width={160}
-          onClick={() => navigate(`${isSelf ? "/measure" : "/measure"}`)}
+          onClick={() =>
+            navigate(`${isSelf ? "/selfregistration" : "/measure"}`)
+          }
         >
           서비스 체험
         </CircularButton>
