@@ -7,16 +7,23 @@ const Button = styled.button`
   border-radius: ${(props) =>
     props.height ? props.height / 2 + "px" : "25px"};
   font-size: 18px;
-  background-color: black;
-  color: white;
-  border: none;
+  font-weight: 700;
+  background-color: ${(props) => (props.white ? "white" : "black")};
+  color: ${(props) => (props.white ? "black" : "white")};
+  border: ${(props) => (props.white ? "2px solid black" : "none")};
   outline: none;
   cursor: pointer;
 `;
 
-const CircularButton = ({ width, height, children }) => {
+const CircularButton = ({ width, height, children, onClick, style, white }) => {
   return (
-    <Button width={width} height={height}>
+    <Button
+      width={width}
+      style={style}
+      height={height}
+      onClick={onClick}
+      white={white}
+    >
       {children}
     </Button>
   );

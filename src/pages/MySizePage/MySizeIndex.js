@@ -104,7 +104,12 @@ const MySizeIndex = () => {
         <span style={{ fontSize: "14px", fontWeight: "300" }}>
           어떤 서비스인지 볼래요!
         </span>
-        <CircularButton width={160}>서비스 체험</CircularButton>
+        <CircularButton
+          width={160}
+          onClick={() => navigate(`${isSelf ? "/measure" : "/measure"}`)}
+        >
+          서비스 체험
+        </CircularButton>
       </div>
     </Container>
   );

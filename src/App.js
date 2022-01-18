@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import SideBar from "./components/SideBar";
 import MySizeIndex from "./pages/MySizePage/MySizeIndex";
 import ScrollToTop from "./components/ScrollToTop";
+import MeasureService from "./pages/MySizePage/MeasureService";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/" element={<AboutPage />} />
           <Route path="/sizesearch" element={<SizeSearchPage />} />
           <Route path="/mysize" element={<MySizeIndex />} />
+          <Route path="/measure" element={<MeasureService />} />
         </Routes>
       </Router>
     </>
