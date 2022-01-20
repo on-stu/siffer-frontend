@@ -43,10 +43,9 @@ const Container = styled.div`
   }
   .cards {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
     overflow-wrap: nowrap;
-    column-gap: 20px;
     white-space: nowrap;
     height: 200px;
   }
@@ -64,7 +63,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding-right: 20px;
-    row-gap: 10px;
+
     margin-top: 40px;
     margin-bottom: 60px;
   }

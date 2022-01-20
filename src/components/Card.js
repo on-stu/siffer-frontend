@@ -20,7 +20,7 @@ const Container = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   overflow: auto;
-
+  margin-bottom: 20px;
   .title {
     font-size: 24px;
     font-weight: 700;

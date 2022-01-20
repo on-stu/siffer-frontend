@@ -8,6 +8,8 @@ import MySizeIndex from "./pages/MySizePage/MySizeIndex";
 import ScrollToTop from "./components/ScrollToTop";
 import MeasureService from "./pages/MySizePage/MeasureService";
 import SelfRegistration from "./pages/MySizePage/SelfRegistration";
+import ContentsList from "./pages/ContentsPage/ContentsList";
+import ContentsView from "./pages/ContentsPage/ContentsView";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -39,11 +41,13 @@ function App() {
         />
         <SideBar visible={sideBar} setVisible={setSideBar} />
         <Routes>
-          <Route path="/" element={<AboutPage />} />
-          <Route path="/sizesearch" element={<SizeSearchPage />} />
+          <Route path="/" element={<SizeSearchPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/mysize" element={<MySizeIndex />} />
           <Route path="/measure" element={<MeasureService />} />
           <Route path="/selfregistration" element={<SelfRegistration />} />
+          <Route path="/contents" element={<ContentsList />} />
+          <Route path="/contents/:id" element={<ContentsView />} />
         </Routes>
       </Router>
     </>

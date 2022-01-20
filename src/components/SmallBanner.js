@@ -9,13 +9,17 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  column-gap: 12px;
+
   background-color: #f0f0f0;
   box-sizing: border-box;
   border-radius: 10px;
   padding: 6px;
   font-weight: 600;
   font-size: 18px;
+  span {
+    margin-left: 12px;
+  }
+  margin-bottom: 12px;
 `;
 
 const SmallBanner = ({ icon, title }) => {

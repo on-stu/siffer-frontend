@@ -83,7 +83,7 @@ const SideBar = ({ visible, setVisible }) => {
             <ul>
               <li
                 onClick={() => {
-                  navigate("/");
+                  navigate("/about");
                   setVisible(false);
                 }}
               >
@@ -91,7 +91,7 @@ const SideBar = ({ visible, setVisible }) => {
               </li>
               <li
                 onClick={() => {
-                  navigate("/sizesearch");
+                  navigate("/");
                   setVisible(false);
                 }}
               >
@@ -106,7 +106,14 @@ const SideBar = ({ visible, setVisible }) => {
                 MY SIZE
               </li>
               <li>STORE</li>
-              <li>CONTENTS</li>
+              <li
+                onClick={() => {
+                  navigate("/contents");
+                  setVisible(false);
+                }}
+              >
+                CONTENTS
+              </li>
             </ul>
           </div>
           <div className="bottom">

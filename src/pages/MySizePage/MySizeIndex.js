@@ -18,7 +18,6 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 20px;
   }
   .buttonCard {
     width: 150px;
@@ -39,13 +38,13 @@ const Container = styled.div`
   .each {
     display: flex;
     flex-direction: column;
+    margin: 0px 10px;
   }
   .item2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 16px;
   }
 `;
 
@@ -100,7 +99,9 @@ const MySizeIndex = () => {
         </div>
       </div>
       <div className="item2">
-        <span style={{ fontSize: "14px", fontWeight: "300" }}>
+        <span
+          style={{ fontSize: "14px", fontWeight: "300", marginBottom: "16px" }}
+        >
           어떤 서비스인지 볼래요!
         </span>
         <CircularButton

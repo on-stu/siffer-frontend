@@ -19,7 +19,7 @@ const Container = styled.div`
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
-
+  margin-right: 20px;
   .title2 {
     font-size: 17px;
     font-weight: 700;

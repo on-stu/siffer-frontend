@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import CircularButton from "../components/CircularButton";
 import Logo from "../images/Logo.svg";
@@ -56,8 +57,12 @@ const Container = styled.div`
   .About__content {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+
     margin-bottom: 80px;
+  }
+
+  .About__content > p {
+    margin-bottom: 20px;
   }
 
   .sifferLogo {
@@ -77,6 +82,7 @@ const Container = styled.div`
 `;
 
 const AboutPage = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="banner">
@@ -184,7 +190,7 @@ const AboutPage = () => {
         </span>
       </div>
       <div className="buttonContainer">
-        <CircularButton width={140} height={47}>
+        <CircularButton width={140} height={47} onClick={() => navigate("/")}>
           Yes!
         </CircularButton>
       </div>

@@ -16,7 +16,6 @@ const Container = styled.div`
   .right {
     display: flex;
     align-items: center;
-    column-gap: 20px;
   }
   ${(props) =>
     props.background && "background-color: rgba(255, 255, 255, 0.5);"}
@@ -32,6 +31,7 @@ const SignUpButton = styled.button`
   color: black;
   cursor: pointer;
   font-weight: 700;
+  margin-right: 20px;
 `;
 
 const Header = ({ background, setSideBar }) => {
