@@ -10,6 +10,7 @@ import MeasureService from "./pages/MySizePage/MeasureService";
 import SelfRegistration from "./pages/MySizePage/SelfRegistration";
 import ContentsList from "./pages/ContentsPage/ContentsList";
 import ContentsView from "./pages/ContentsPage/ContentsView";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -48,6 +49,7 @@ function App() {
           <Route path="/selfregistration" element={<SelfRegistration />} />
           <Route path="/contents" element={<ContentsList />} />
           <Route path="/contents/:id" element={<ContentsView />} />
+          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </Router>
     </>

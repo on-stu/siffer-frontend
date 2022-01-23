@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../images/Logo.svg";
 import { VscThreeBars } from "react-icons/vsc";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -35,14 +36,27 @@ const SignUpButton = styled.button`
 `;
 
 const Header = ({ background, setSideBar }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
-    <Container background={background}>
-      <img src={Logo} style={{ zIndex: 12 }} />
-      <span className="right">
-        <SignUpButton>Sign up</SignUpButton>
-        <VscThreeBars onClick={() => setSideBar(true)} />
-      </span>
-    </Container>
+    <>
+      {location.pathname !== "/signup" && (
+        <Container background={background}>
+          <img
+            src={Logo}
+            style={{ zIndex: 12 }}
+            onClick={() => navigate("/")}
+          />
+          <span className="right">
+            <SignUpButton onClick={() => navigate("/signup")}>
+              Sign up
+            </SignUpButton>
+            <VscThreeBars onClick={() => setSideBar(true)} />
+          </span>
+        </Container>
+      )}
+    </>
   );
 };
 
