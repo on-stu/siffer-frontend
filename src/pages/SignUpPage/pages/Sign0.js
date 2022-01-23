@@ -36,6 +36,8 @@ const Styledbutton = styled.button`
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 10px;
+  color: black;
+
   ${(props) =>
     props.backgroundColor && `background-color: ${props.backgroundColor}`};
 `;

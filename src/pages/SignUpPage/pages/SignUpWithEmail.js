@@ -51,6 +51,8 @@ const Styledbutton = styled.button`
   font-size: 18px;
   font-weight: 500;
   box-sizing: border-box;
+
+  color: black;
   margin-bottom: 20px;
   padding: 10px;
   ${(props) =>
