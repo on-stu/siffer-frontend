@@ -42,7 +42,6 @@ const SidebarCon = styled.div`
     color: #02cb77;
     margin-top: 30%;
   }
-
   .bottom {
     color: #02cb77;
     margin-top: 30%;

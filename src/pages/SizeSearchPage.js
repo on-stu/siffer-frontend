@@ -25,6 +25,7 @@ const Container = styled.div`
   }
   .inputContainer {
     width: 85%;
+    max-width: 645px;
     height: fit-content;
     position: relative;
     display: flex;
@@ -52,6 +53,22 @@ const Container = styled.div`
   }
   .cardsContainer {
     padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  @media all and (min-width: 768px) {
+    .middle {
+      font-size: 30px;
+    }
+    .bold {
+      font-weight: 700;
+      font-size: 60px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1024px;
+    }
   }
 `;
 
