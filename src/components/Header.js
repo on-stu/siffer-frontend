@@ -32,8 +32,24 @@ const Container = styled.div`
   .menuButtonContainer {
     display: flex;
     flex-direction: column;
+    top: -100px;
+    opacity: 0;
+    transition: 600ms ease-in-out;
     position: absolute;
+    visibility: hidden;
+  }
+  .menuButtonContainer.active {
+    opacity: 100;
     top: 0;
+    visibility: visible;
+  }
+  .menuButton {
+    visibility: visible;
+    transition: 100ms ease-in-out;
+  }
+  .menuButton.active {
+    visibility: hidden;
+    opacity: 0;
   }
   @media all and (min-width: 768px) {
     .logo {
@@ -104,48 +120,52 @@ const Header = ({ background, setSideBar }) => {
                 Sign up
               </SignUpButton>
               <div className="menu">
-                {dropMenu ? (
-                  <div className="menuButtonContainer">
-                    <MenuButton onClick={() => setDropMenu(false)}>
-                      Menu
-                    </MenuButton>
-                    <MenuButton
-                      mode="lightgray"
-                      onClick={() => {
-                        navigate("/about");
-                        setDropMenu(false);
-                      }}
-                    >
-                      About
-                    </MenuButton>
-                    <MenuButton
-                      mode="lightgray"
-                      onClick={() => {
-                        navigate("/");
-                        setDropMenu(false);
-                      }}
-                    >
-                      My size
-                    </MenuButton>
-                    <MenuButton mode="lightgray">Store</MenuButton>
-                    <MenuButton
-                      mode="lightgray"
-                      onClick={() => {
-                        navigate("/contents");
-                        setDropMenu(false);
-                      }}
-                    >
-                      Community
-                    </MenuButton>
-                    <MenuButton mode="gray">내 계정</MenuButton>
-                    <MenuButton mode="gray">고객센터</MenuButton>
-                  </div>
-                ) : (
-                  <VscThreeBars
-                    className="menuButton"
-                    onClick={() => setDropMenu(true)}
-                  />
-                )}
+                <div
+                  className={
+                    dropMenu
+                      ? "menuButtonContainer active"
+                      : "menuButtonContainer"
+                  }
+                >
+                  <MenuButton onClick={() => setDropMenu(false)}>
+                    Menu
+                  </MenuButton>
+                  <MenuButton
+                    mode="lightgray"
+                    onClick={() => {
+                      navigate("/about");
+                      setDropMenu(false);
+                    }}
+                  >
+                    About
+                  </MenuButton>
+                  <MenuButton
+                    mode="lightgray"
+                    onClick={() => {
+                      navigate("/");
+                      setDropMenu(false);
+                    }}
+                  >
+                    My size
+                  </MenuButton>
+                  <MenuButton mode="lightgray">Store</MenuButton>
+                  <MenuButton
+                    mode="lightgray"
+                    onClick={() => {
+                      navigate("/contents");
+                      setDropMenu(false);
+                    }}
+                  >
+                    Community
+                  </MenuButton>
+                  <MenuButton mode="gray">내 계정</MenuButton>
+                  <MenuButton mode="gray">고객센터</MenuButton>
+                </div>
+
+                <VscThreeBars
+                  className={dropMenu ? "menuButton active" : "menuButton"}
+                  onClick={() => setDropMenu(true)}
+                />
               </div>
             </span>
           </div>
