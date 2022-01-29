@@ -11,16 +11,16 @@ const Container = styled.div`
   justify-content: flex-end;
   box-sizing: border-box;
   background-origin: border-box;
-  border: 16px solid transparent;
-
+  padding: 20px;
   outline: none;
   color: white;
   background-image: ${(props) => props.imageUrl && `url(${props.imageUrl})`};
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  overflow: auto;
   margin-bottom: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   .title {
     font-size: 24px;
     font-weight: 700;
