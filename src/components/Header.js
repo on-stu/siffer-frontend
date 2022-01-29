@@ -146,7 +146,7 @@ const Header = ({ background, setSideBar }) => {
                 <MenuButton
                   mode="lightgray"
                   onClick={() => {
-                    navigate("/");
+                    navigate("/mysize");
                     setDropMenu(false);
                   }}
                 >

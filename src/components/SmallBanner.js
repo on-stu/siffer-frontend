@@ -9,7 +9,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-
+  max-width: 500px;
   background-color: #f0f0f0;
   box-sizing: border-box;
   border-radius: 10px;

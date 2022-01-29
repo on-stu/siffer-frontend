@@ -11,11 +11,13 @@ const Container = styled.div`
   .banner {
     width: 100%;
     height: 100vh;
-    background-image: url("images/MeasureService/6.png");
-    background-size: cover;
+    background-image: url("images/unsplash/2.jpg");
+    background-size: contain;
     background-position: center center;
     display: flex;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-color: black;
     position: relative;
   }
   .banner__item {

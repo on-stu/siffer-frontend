@@ -29,6 +29,10 @@ const Container = styled.div`
     font-size: 14px;
     font-weight: 300;
   }
+  @media all and (min-width: 768px) {
+    width: 300px;
+    height: 260px;
+  }
 `;
 
 const HorizantalCard = ({ title, tags, imageUrl }) => {
