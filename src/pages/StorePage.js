@@ -18,7 +18,7 @@ const Container = styled.div`
     background-image: url("/images/unsplash/3.jpg");
     background-position: center center;
     background-size: cover;
-    border-radius: 30px;
+    border-radius: 40px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     flex-direction: column;
@@ -54,6 +54,16 @@ const Container = styled.div`
     font-weight: 700;
     margin-top: 30px;
     margin-bottom: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 179px;
+      height: 186px;
+    }
+    .card > span {
+      font-size: 30px;
+      padding: 10px;
+    }
   }
 `;
 

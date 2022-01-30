@@ -4,6 +4,8 @@ import CircularButton from "../../components/CircularButton";
 import SmallBanner from "../../components/SmallBanner";
 import useWindowDimensions from "../../hooks/UseWindowDimensions";
 import HorizantalCard from "./HorizontalCard";
+import Hand1 from "../../icons/hand.svg";
+import Hand2 from "../../icons/hand2.svg";
 
 const Container = styled.div`
   width: 100%;
@@ -82,10 +84,26 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: center;
   }
+  .guide {
+    display: flex;
+    flex-direction: row;
+    text-decoration: underline;
+    align-items: flex-end;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .guide > span {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   @media all and (min-width: 768px) {
     .banner {
       background-size: 60%;
       background-position: right center;
+    }
+    .guide > span {
+      cursor: pointer;
     }
   }
 `;
@@ -164,6 +182,11 @@ const SelfRegistration = () => {
               title="가이드를 따라 치수 측정 후 입력하기"
             />
             <SmallBanner icon="keyboard" title="측정한 치수 입력" />
+            <div className="guide">
+              <img src={Hand1} width={32} />
+              <span>치수 측정 가이드</span>
+              <img src={Hand2} width={32} />
+            </div>
           </div>
         </div>
       </div>

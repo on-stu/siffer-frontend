@@ -4,6 +4,7 @@ import { SearchInput } from "../components/SearchInput";
 import { FiSearch } from "react-icons/fi";
 import CircularButton from "../components/CircularButton";
 import Card from "../components/Card";
+import useWindowDimensions from "../hooks/UseWindowDimensions";
 
 const Container = styled.div`
   width: 100%;
@@ -32,10 +33,17 @@ const Container = styled.div`
     justify-content: center;
     margin-top: 20px;
   }
-  .icon {
+  .iconContainer {
     position: absolute;
-    left: 10px;
-    top: 12px;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  .icon {
   }
   .buttonContainer {
     width: 100%;
@@ -74,6 +82,7 @@ const Container = styled.div`
 `;
 
 const SizeSearchPage = () => {
+  const { width, height } = useWindowDimensions();
   return (
     <Container>
       <div className="banner">
@@ -81,7 +90,9 @@ const SizeSearchPage = () => {
         <span className="middle">내 사이즈를 찾는 사이즈 검색 엔진</span>
         <span className="bold">Size Search Engine</span>
         <span className="inputContainer">
-          <FiSearch className="icon" />
+          <div className="iconContainer">
+            <FiSearch className="icon" />
+          </div>
           <SearchInput placeholder="사이즈 비교하고 싶은 '제품링크' 복사붙여넣기" />
         </span>
         <span className="buttonContainer">
@@ -120,6 +131,47 @@ const SizeSearchPage = () => {
             tags="# winter knit #top ranking"
             imageUrl="images/unsplash/3.jpg"
           />
+          {width > 768 && (
+            <>
+              <Card
+                title="내 몸은 물론 환경까지"
+                title2="지켜주는 이너템"
+                subTitle="친환경 소재의 감각적인 이너 티셔츠
+          "
+                tags="# environment  #trendy  # T-shirts"
+                imageUrl="images/unsplash/5.jpg"
+              />
+              <Card
+                title="원마일웨어도 나답게"
+                subTitle="프리랜서의 주말"
+                tags="# traning set-up #track pants"
+                imageUrl="images/unsplash/4.jpg"
+              />
+              <Card
+                title="'호랑이 에디션'"
+                title2="액티브웨어 신상"
+                subTitle="임인년을 맞이한 스포츠 브랜드 페션템"
+                tags="# yellow #pattern #crop top"
+                imageUrl="images/unsplash/1.jpg"
+              />
+
+              <Card
+                title="추위에 맞설"
+                title2="윈터 니트 초이스 팁"
+                subTitle="체형, 소재, 디자인으로 가린 최종 우승템은?"
+                tags="# winter knit #top ranking"
+                imageUrl="images/unsplash/3.jpg"
+              />
+              <Card
+                title="내 몸은 물론 환경까지"
+                title2="지켜주는 이너템"
+                subTitle="친환경 소재의 감각적인 이너 티셔츠
+          "
+                tags="# environment  #trendy  # T-shirts"
+                imageUrl="images/unsplash/5.jpg"
+              />
+            </>
+          )}
         </div>
       </div>
     </Container>

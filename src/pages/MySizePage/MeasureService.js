@@ -90,6 +90,9 @@ const Container = styled.div`
     .imgBox {
       margin-top: 0;
     }
+    .banner__item {
+      color: black;
+    }
   }
 `;
 
@@ -120,7 +123,7 @@ const MeasureService = () => {
               원하시는 장소로 달려갑니다.
             </span>
             <span style={{ fontWeight: "300", fontSize: "20px" }}>
-              단 한번의 측정으로 사이즈 고민없는
+              <b>단 한번의 무료 측정</b>으로 사이즈 고민없는
             </span>
             <span style={{ fontWeight: "300", fontSize: "20px" }}>
               온라인 쇼핑을 시작하세요.
