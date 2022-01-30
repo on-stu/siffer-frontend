@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CircularButton from "../../components/CircularButton";
 import SmallBanner from "../../components/SmallBanner";
+import useWindowDimensions from "../../hooks/UseWindowDimensions";
 import HorizantalCard from "./HorizontalCard";
 
 const Container = styled.div`
@@ -54,7 +55,7 @@ const Container = styled.div`
     overflow-y: hidden;
     overflow-wrap: nowrap;
     white-space: nowrap;
-    height: 200px;
+    height: auto;
   }
   p {
     margin-top: 10px;
@@ -80,9 +81,20 @@ const Container = styled.div`
     width: 100%;
     max-width: 1024px;
   }
+  @media all and (min-width: 768px) {
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20px;
+    }
+    .imgBox {
+      margin-top: 0;
+    }
+  }
 `;
 
 const MeasureService = () => {
+  const { width, height } = useWindowDimensions();
   return (
     <Container>
       <div className="banner">
@@ -137,12 +149,28 @@ const MeasureService = () => {
             <HorizantalCard
               title="신체부위에 고민있는 분"
               tags="# 하체통통 # 복부비만"
-              imageUrl="images/MeasureService/2.png"
+              imageUrl="images/unsplash2/3.png"
             />
             <HorizantalCard
               title="셀프측정이 귀찮은 분"
               tags="# 귀차니즘"
-              imageUrl="images/MeasureService/3.png"
+              imageUrl="images/unsplash2/2.png"
+            />
+            <HorizantalCard
+              title="완벽주의 온라인 쇼퍼"
+              tags="# 반품은 딱 질색"
+              imageUrl="images/unsplash2/4.png"
+            />
+            <HorizantalCard
+              title="핏에 민감한 분"
+              tags="# 핏에 죽고 핏에 사는"
+              imageUrl="images/unsplash2/7.png"
+              top={true}
+            />
+            <HorizantalCard
+              title="혼자는 어색한 분"
+              tags="# 친구랑 동시 신청 OK"
+              imageUrl="images/unsplash2/8.jpg"
             />
           </div>
           <span className="title">서비스 이용방법</span>
@@ -172,7 +200,13 @@ const MeasureService = () => {
           <span className="subTitle">해당 서비스 이용 고객님께 씨퍼만의</span>
           <span className="subTitle">유니크한 굿즈를 선물해 드립니다.</span>
           <div className="imgBox">
-            <img src="images/MeasureService/4.png" />
+            <img
+              src={
+                width > 768
+                  ? "images/MeasureService/9.png"
+                  : "images/MeasureService/4.png"
+              }
+            />
           </div>
         </div>
       </div>

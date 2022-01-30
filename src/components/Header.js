@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "../images/Logo.svg";
-import { VscThreeBars } from "react-icons/vsc";
+import { AiOutlineMenu } from "react-icons/ai";
 import { useLocation, useNavigate } from "react-router-dom";
+import useWindowDimensions from "../hooks/UseWindowDimensions";
 
 const Container = styled.div`
   width: 100vw;
@@ -46,7 +47,7 @@ const Container = styled.div`
   }
   .menuButton {
     visibility: visible;
-    transition: 100ms ease-in-out;
+    transition: 500ms ease-in-out;
     margin-right: 25px;
   }
   .menuButton.active {
@@ -109,7 +110,7 @@ const Header = ({ background, setSideBar }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [dropMenu, setDropMenu] = useState(false);
-
+  const { width, height } = useWindowDimensions();
   return (
     <>
       {location.pathname !== "/signup" && (
@@ -174,9 +175,11 @@ const Header = ({ background, setSideBar }) => {
                 <MenuButton mode="gray">고객센터</MenuButton>
               </div>
 
-              <VscThreeBars
+              <AiOutlineMenu
                 className={dropMenu ? "menuButton active" : "menuButton"}
                 onClick={() => setDropMenu(true)}
+                color={location.pathname === "/selfregistration" && "white"}
+                size={width > 768 && 30}
               />
             </span>
           </div>

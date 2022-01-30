@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CircularButton from "../../components/CircularButton";
 import SmallBanner from "../../components/SmallBanner";
+import useWindowDimensions from "../../hooks/UseWindowDimensions";
 import HorizantalCard from "./HorizontalCard";
 
 const Container = styled.div`
@@ -12,13 +13,15 @@ const Container = styled.div`
     width: 100%;
     height: 100vh;
     background-image: url("images/unsplash/2.jpg");
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
-    background-color: black;
+    background-color: #0f0f0f;
     position: relative;
+    justify-content: center;
+    align-items: center;
   }
   .banner__item {
     height: 50%;
@@ -27,6 +30,10 @@ const Container = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .content {
     width: 100%;
@@ -34,6 +41,7 @@ const Container = styled.div`
     padding-left: 20px;
     display: flex;
     flex-direction: column;
+    max-width: 1024px;
   }
   .title {
     margin-top: 80px;
@@ -49,7 +57,6 @@ const Container = styled.div`
     overflow-y: hidden;
     overflow-wrap: nowrap;
     white-space: nowrap;
-    height: 200px;
   }
   p {
     margin-top: 10px;
@@ -68,9 +75,23 @@ const Container = styled.div`
     margin-top: 40px;
     margin-bottom: 160px;
   }
+  .con {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  @media all and (min-width: 768px) {
+    .banner {
+      background-size: 60%;
+      background-position: right center;
+    }
+  }
 `;
 
 const SelfRegistration = () => {
+  const { width, height } = useWindowDimensions();
   return (
     <Container>
       <div className="banner">
@@ -115,27 +136,35 @@ const SelfRegistration = () => {
           </CircularButton>
         </div>
       </div>
-      <div className="content">
-        <span className="title">이런 분께 추천해요.</span>
-        <div className="cards">
-          <HorizantalCard
-            title="지금 당장 쇼핑이 급한 분"
-            tags="# 긴급쇼핑"
-            imageUrl="images/MeasureService/7.png"
-          />
-          <HorizantalCard
-            title="비대면 서비스를 선호하시는 분"
-            tags="# 언택트"
-            imageUrl="images/MeasureService/8.png"
-          />
-        </div>
-        <span className="title">서비스 이용방법</span>
-        <div className="banners">
-          <SmallBanner icon="finger" title="하단의 '입력' 버튼 클릭 !" />
-          <SmallBanner
-            icon="ruler"
-            title="가이드를 따라 치수 측정 후 입력하기"
-          />
+      <div className="con">
+        <div className="content">
+          <span className="title">이런 분께 추천해요.</span>
+          <div className="cards">
+            <HorizantalCard
+              title="지금 당장 쇼핑이 급한 분"
+              tags="# 긴급쇼핑"
+              imageUrl="images/unsplash2/5.png"
+            />
+            <HorizantalCard
+              title="비대면 서비스를 선호하시는 분"
+              tags="# 언택트"
+              imageUrl="images/unsplash2/1.png"
+            />
+            <HorizantalCard
+              title="핏에 민감하지 않은 분"
+              tags="# 맞기만 하면 장땡"
+              imageUrl="images/unsplash2/6.png"
+            />
+          </div>
+          <span className="title">서비스 이용방법</span>
+          <div className="banners">
+            <SmallBanner icon="finger" title="하단의 '입력' 버튼 클릭 !" />
+            <SmallBanner
+              icon="ruler"
+              title="가이드를 따라 치수 측정 후 입력하기"
+            />
+            <SmallBanner icon="keyboard" title="측정한 치수 입력" />
+          </div>
         </div>
       </div>
     </Container>

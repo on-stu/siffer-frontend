@@ -21,13 +21,13 @@ const Container = styled.div`
     flex-direction: column;
   }
   .top {
-    height: 40%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
   .bottom {
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -37,6 +37,16 @@ const Container = styled.div`
     font-weight: 700;
     padding: 20px;
     box-sizing: border-box;
+  }
+  .sentence {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    white-space: nowrap;
   }
   .img {
     width: 160px;
@@ -78,8 +88,10 @@ const Container = styled.div`
     background-image: url("images/LandingPage/2.png");
     width: 100%;
     height: 240px;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
+    background-color: #e82249;
+    background-repeat: no-repeat;
   }
   .buttonContainer {
     width: 100%;
@@ -111,6 +123,13 @@ const Container = styled.div`
       font-size: 20px;
       font-weight: 400;
     }
+    .sifferLogo {
+      height: 400px;
+      background-size: contain;
+      background-position: center center;
+      background-color: #e82249;
+      background-repeat: no-repeat;
+    }
   }
 `;
 
@@ -129,6 +148,15 @@ const AboutPage = () => {
           <span>you deserve to happy</span>
           <span>shopping online.</span>
         </div>
+        <span className="sentence">
+          {width > 768
+            ? `
+          We offer ‘Size Search Engine’ to find best fit for you. We show you
+          fit prediction, You just pick. Start happy shopping with SIFFER.
+          Welcome !
+          `
+            : `We offer ‘Size Search Engine’ to find best fit for you.`}
+        </span>
       </div>
       <div className="aboutContainer">
         <div className="About">

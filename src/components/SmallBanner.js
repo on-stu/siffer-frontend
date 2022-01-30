@@ -4,6 +4,7 @@ import Congratulate from "../icons/Congratulate.svg";
 import Finger from "../icons/Finger.svg";
 import Gift from "../icons/Gift.svg";
 import Ruler from "../icons/Ruler.svg";
+import Keyboard from "../icons/Keyboard.svg";
 
 const Container = styled.div`
   width: 100%;
@@ -33,6 +34,8 @@ const SmallBanner = ({ icon, title }) => {
         return Gift;
       case "ruler":
         return Ruler;
+      case "keyboard":
+        return Keyboard;
       default:
         return Finger;
     }
