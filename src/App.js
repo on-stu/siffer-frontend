@@ -12,6 +12,7 @@ import ContentsList from "./pages/ContentsPage/ContentsList";
 import ContentsView from "./pages/ContentsPage/ContentsView";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import StorePage from "./pages/StorePage";
+import Practice from "./pages/ThreeJsPage/Practice";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -52,6 +53,7 @@ function App() {
           <Route path="/contents/:id" element={<ContentsView />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/store" element={<StorePage />} />
+          <Route path="/practice" element={<Practice />} />
         </Routes>
       </Router>
     </>
