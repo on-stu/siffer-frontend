@@ -7,6 +7,7 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
+  align-items: center;
   .top {
     margin-top: 40px;
     width: 100%;
@@ -35,6 +36,17 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
   }
+  .innerContainer {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -62,29 +74,31 @@ const Styledbutton = styled.button`
 const SignUpWithEmail = ({ setCurrent }) => {
   return (
     <Container>
-      <div className="top">
-        <span onClick={() => setCurrent(0)}>
-          <IoIosArrowBack size={20} />
-        </span>
-        <span>이메일 회원가입</span>
-        <span></span>
-      </div>
-      <div className="contents">
-        <span style={{ marginTop: "20px", fontSize: "20px" }}>이메일</span>
-        <StyledInput />
-        <span style={{ fontSize: "14px", fontWeight: "300" }}>
-          이메일이 정상입니다.
-        </span>
-        <span style={{ marginTop: "20px", fontSize: "20px" }}>비밀번호</span>
-        <StyledInput />
-        <span style={{ fontSize: "14px", fontWeight: "300" }}>
-          9-20자 이내의 영문과 숫자의 조합으로 입력해주세요.
-        </span>
-      </div>
-      <div className="buttons">
-        <Styledbutton backgroundColor="#02CB77" onClick={() => setCurrent(2)}>
-          Next
-        </Styledbutton>
+      <div className="innerContainer">
+        <div className="top">
+          <span onClick={() => setCurrent(0)}>
+            <IoIosArrowBack size={20} />
+          </span>
+          <span>이메일 회원가입</span>
+          <span></span>
+        </div>
+        <div className="contents">
+          <span style={{ marginTop: "20px", fontSize: "20px" }}>이메일</span>
+          <StyledInput />
+          <span style={{ fontSize: "14px", fontWeight: "300" }}>
+            이메일이 정상입니다.
+          </span>
+          <span style={{ marginTop: "20px", fontSize: "20px" }}>비밀번호</span>
+          <StyledInput type="password" />
+          <span style={{ fontSize: "14px", fontWeight: "300" }}>
+            9-20자 이내의 영문과 숫자의 조합으로 입력해주세요.
+          </span>
+        </div>
+        <div className="buttons">
+          <Styledbutton backgroundColor="#02CB77" onClick={() => setCurrent(2)}>
+            Next
+          </Styledbutton>
+        </div>
       </div>
     </Container>
   );

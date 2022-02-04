@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Logo from "../images/Logo.svg";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -27,7 +27,7 @@ const Container = styled.div`
     max-width: 1024px;
   }
   ${(props) =>
-    props.background && "background-color: rgba(255, 255, 255, 0.5);"}
+    props.background && "background-color: rgba(255, 255, 255, 0.2);"}
   z-index: 10;
 
   .menuButtonContainer {
@@ -111,9 +111,21 @@ const Header = ({ background, setSideBar }) => {
   const location = useLocation();
   const [dropMenu, setDropMenu] = useState(false);
   const { width, height } = useWindowDimensions();
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (
+      location.pathname === "/signup" ||
+      location.pathname === "/measure/reserve"
+    ) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+  }, [location]);
   return (
     <>
-      {location.pathname !== "/signup" && (
+      {visible && (
         <Container background={background}>
           <div className="con">
             <img

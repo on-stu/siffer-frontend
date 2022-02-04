@@ -6,9 +6,9 @@ const Container = styled.div`
   height: 100vh;
   background-color: black;
   display: flex;
+  align-items: center;
   flex-direction: column;
   .top {
-    margin-top: 20%;
     height: 30%;
     width: 100%;
     color: white;
@@ -25,6 +25,17 @@ const Container = styled.div`
     flex-direction: column;
     box-sizing: border-box;
   }
+  .innerContainer {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 `;
 
 const Styledbutton = styled.button`
@@ -37,7 +48,6 @@ const Styledbutton = styled.button`
   margin-bottom: 20px;
   padding: 10px;
   color: black;
-
   ${(props) =>
     props.backgroundColor && `background-color: ${props.backgroundColor}`};
 `;
@@ -45,19 +55,21 @@ const Styledbutton = styled.button`
 const Sign0 = ({ setCurrent }) => {
   return (
     <Container>
-      <div className="top">
-        <span className="title">Sign Up</span>
-      </div>
-      <div className="buttons">
-        <Styledbutton backgroundColor="white" onClick={() => setCurrent(1)}>
-          이메일로 회원가입
-        </Styledbutton>
-        <Styledbutton backgroundColor="#FFEE57">
-          카카오톡 계정으로 계속
-        </Styledbutton>
-        <Styledbutton backgroundColor="#2164E5">
-          페이스북 계정으로 계속
-        </Styledbutton>
+      <div className="innerContainer">
+        <div className="top">
+          <span className="title">Sign Up</span>
+        </div>
+        <div className="buttons">
+          <Styledbutton backgroundColor="white" onClick={() => setCurrent(1)}>
+            이메일로 회원가입
+          </Styledbutton>
+          <Styledbutton backgroundColor="#FFEE57">
+            카카오톡 계정으로 계속
+          </Styledbutton>
+          <Styledbutton backgroundColor="#2164E5">
+            페이스북 계정으로 계속
+          </Styledbutton>
+        </div>
       </div>
     </Container>
   );

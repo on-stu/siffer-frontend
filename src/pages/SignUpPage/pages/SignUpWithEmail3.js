@@ -7,6 +7,18 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  .innerContainer {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
   .top {
     margin-top: 40px;
     width: 100%;
@@ -62,24 +74,26 @@ const Styledbutton = styled.button`
 const SignUpWithEmail3 = ({ setCurrent }) => {
   return (
     <Container>
-      <div className="top">
-        <span onClick={() => setCurrent(2)}>
-          <IoIosArrowBack size={20} />
-        </span>
-        <span>이메일 회원가입</span>
-        <span></span>
-      </div>
-      <div className="contents">
-        <span style={{ marginTop: "20px", fontSize: "20px" }}>인증번호</span>
-        <StyledInput />
-        <span style={{ fontSize: "14px", fontWeight: "300" }}>
-          인증번호가 발송되었습니다.
-        </span>
-      </div>
-      <div className="buttons">
-        <Styledbutton backgroundColor="#02CB77" onClick={() => setCurrent(4)}>
-          Next
-        </Styledbutton>
+      <div className="innerContainer">
+        <div className="top">
+          <span onClick={() => setCurrent(2)}>
+            <IoIosArrowBack size={20} />
+          </span>
+          <span>이메일 회원가입</span>
+          <span></span>
+        </div>
+        <div className="contents">
+          <span style={{ marginTop: "20px", fontSize: "20px" }}>인증번호</span>
+          <StyledInput />
+          <span style={{ fontSize: "14px", fontWeight: "300" }}>
+            인증번호가 발송되었습니다.
+          </span>
+        </div>
+        <div className="buttons">
+          <Styledbutton backgroundColor="#02CB77" onClick={() => setCurrent(4)}>
+            Next
+          </Styledbutton>
+        </div>
       </div>
     </Container>
   );

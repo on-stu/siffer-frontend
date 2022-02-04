@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import CircularButton from "../../components/CircularButton";
 import SmallBanner from "../../components/SmallBanner";
@@ -98,6 +99,7 @@ const Container = styled.div`
 
 const MeasureService = () => {
   const { width, height } = useWindowDimensions();
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="banner">
@@ -139,7 +141,11 @@ const MeasureService = () => {
               maxWidth: "1024px",
             }}
           >
-            <CircularButton width={320} white={true}>
+            <CircularButton
+              width={320}
+              white={true}
+              onClick={() => navigate("/measure/reserve")}
+            >
               지금 바로 예약
             </CircularButton>
           </div>

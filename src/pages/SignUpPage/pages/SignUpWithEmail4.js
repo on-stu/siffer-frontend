@@ -8,6 +8,18 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  .innerContainer {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
   .top {
     margin-top: 40px;
     width: 100%;
@@ -64,22 +76,24 @@ const SignUpWithEmail4 = ({ setCurrent }) => {
   const navigate = useNavigate();
   return (
     <Container>
-      <div className="top">
-        <span onClick={() => setCurrent(3)}>
-          <IoIosArrowBack size={20} />
-        </span>
-        <span>이메일 회원가입</span>
-        <span></span>
-      </div>
-      <div className="contents">
-        <span style={{ marginTop: "20px", fontSize: "20px" }}>닉네임</span>
-        <StyledInput />
-        <span style={{ fontSize: "14px", fontWeight: "300" }}></span>
-      </div>
-      <div className="buttons">
-        <Styledbutton backgroundColor="#FF244D" onClick={() => navigate("/")}>
-          Success
-        </Styledbutton>
+      <div className="innerContainer">
+        <div className="top">
+          <span onClick={() => setCurrent(3)}>
+            <IoIosArrowBack size={20} />
+          </span>
+          <span>이메일 회원가입</span>
+          <span></span>
+        </div>
+        <div className="contents">
+          <span style={{ marginTop: "20px", fontSize: "20px" }}>닉네임</span>
+          <StyledInput />
+          <span style={{ fontSize: "14px", fontWeight: "300" }}></span>
+        </div>
+        <div className="buttons">
+          <Styledbutton backgroundColor="#FF244D" onClick={() => navigate("/")}>
+            Success
+          </Styledbutton>
+        </div>
       </div>
     </Container>
   );
