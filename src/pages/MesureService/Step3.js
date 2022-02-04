@@ -1,39 +1,39 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { IoIosArrowBack } from "react-icons/io";
 import useWindowDimensions from "../../hooks/UseWindowDimensions";
-import Calendar from "../../components/Calendar";
 
-const Step2 = ({ setCurrent }) => {
+const Step3 = ({ setCurrent }) => {
   const { width, height } = useWindowDimensions();
-
+  const navigate = useNavigate();
   return (
     <>
-      <div className="top">
-        <span onClick={() => setCurrent(1)}>
-          <IoIosArrowBack size={20} />
-        </span>
-        <span>이메일 회원가입</span>
-        <span></span>
-      </div>
       <div className="contents">
-        <Calendar />
+        <span style={{ marginTop: "20px", fontSize: "20px" }}>시간</span>
+        <StyledInput />
       </div>
       <div className="buttons">
         {width > 768 && (
-          <Styledbutton backgroundColor="#8B8A8A" onClick={() => setCurrent(1)}>
+          <Styledbutton backgroundColor="#8B8A8A" onClick={() => navigate(-1)}>
             Back
           </Styledbutton>
         )}
-        <Styledbutton backgroundColor="#02CB77" onClick={() => setCurrent(3)}>
-          Next
+        <Styledbutton backgroundColor="#FF244D" onClick={() => setCurrent(2)}>
+          Success
         </Styledbutton>
       </div>
     </>
   );
 };
 
-export default Step2;
+export default Step3;
+
+const StyledInput = styled.input`
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+`;
 
 const Styledbutton = styled.button`
   width: 100px;

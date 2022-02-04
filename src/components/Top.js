@@ -1,11 +1,20 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Top = ({ setCurrent, title, backButton }) => {
+const Top = ({ setCurrent, title, backButton, current }) => {
+  const navigate = useNavigate();
+  const onClick = () => {
+    if (current === 1) {
+      navigate(-1);
+    } else {
+      setCurrent(current - 1);
+    }
+  };
   return (
     <Container>
-      <span onClick={() => setCurrent(1)}>
+      <span onClick={onClick}>
         {backButton && <IoIosArrowBack size={20} />}
       </span>
       <span>{title}</span>

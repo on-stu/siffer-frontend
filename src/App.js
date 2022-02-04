@@ -14,6 +14,7 @@ import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import StorePage from "./pages/StorePage";
 import Practice from "./pages/ThreeJsPage/Practice";
 import MeasureServiceIndex from "./pages/MesureService/Index";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
   const [headerBackground, setHeaderBackground] = useState(false);
@@ -56,6 +57,7 @@ function App() {
           <Route path="/store" element={<StorePage />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/measure/reserve" element={<MeasureServiceIndex />} />
+          <Route path="/result" element={<ResultPage />} />
         </Routes>
       </Router>
     </>

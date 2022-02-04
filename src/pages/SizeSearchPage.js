@@ -5,6 +5,7 @@ import { FiSearch } from "react-icons/fi";
 import CircularButton from "../components/CircularButton";
 import Card from "../components/Card";
 import useWindowDimensions from "../hooks/UseWindowDimensions";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -83,6 +84,7 @@ const Container = styled.div`
 
 const SizeSearchPage = () => {
   const { width, height } = useWindowDimensions();
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="banner">
@@ -96,7 +98,11 @@ const SizeSearchPage = () => {
           <SearchInput placeholder="사이즈 비교하고 싶은 '제품링크' 복사붙여넣기" />
         </span>
         <span className="buttonContainer">
-          <CircularButton width={120} height={40}>
+          <CircularButton
+            width={120}
+            height={40}
+            onClick={() => navigate("/result")}
+          >
             사이즈 비교
           </CircularButton>
         </span>

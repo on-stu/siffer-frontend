@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import useWindowDimensions from "../../hooks/UseWindowDimensions";
 
 const Step1 = ({ setCurrent }) => {
   const { width, height } = useWindowDimensions();
+  const navigate = useNavigate();
   return (
     <>
       <div className="contents">
@@ -16,7 +18,12 @@ const Step1 = ({ setCurrent }) => {
       </div>
       <div className="buttons">
         {width > 768 && (
-          <Styledbutton backgroundColor="#8B8A8A" onClick={() => setCurrent(1)}>
+          <Styledbutton
+            backgroundColor="#8B8A8A"
+            onClick={() => {
+              navigate(-1, { replace: true });
+            }}
+          >
             Back
           </Styledbutton>
         )}

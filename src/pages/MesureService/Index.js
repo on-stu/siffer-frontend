@@ -5,6 +5,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import useWindowDimensions from "../../hooks/UseWindowDimensions";
 import Top from "../../components/Top";
+import Step3 from "./Step3";
 
 const MeasureServiceIndex = () => {
   const [current, setCurrent] = useState(1);
@@ -12,7 +13,12 @@ const MeasureServiceIndex = () => {
   return (
     <Container>
       {width < 768 && (
-        <Top setCurrent={setCurrent} title="서비스 예약" backButton={true} />
+        <Top
+          setCurrent={setCurrent}
+          current={current}
+          title="서비스 예약"
+          backButton={true}
+        />
       )}
       <ProgressBar total={3} current={current} />
       <div className="innerContainer">
@@ -21,8 +27,10 @@ const MeasureServiceIndex = () => {
         )}
         {current === 1 ? (
           <Step1 setCurrent={setCurrent} />
-        ) : (
+        ) : current === 2 ? (
           <Step2 setCurrent={setCurrent} />
+        ) : (
+          <Step3 setCurrent={setCurrent} />
         )}
       </div>
     </Container>
